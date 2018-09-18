@@ -1,0 +1,68 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Admin Panel
+    link(href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css')
+    style(type="text/css") form { margin-bottom: 0; }
+  body
+    .container
+      .row
+        .eleven.columns
+          h2 Admin Panel
+        .one.column
+          a.button.button-primary(href='/admin/logout') Log Out
+      .row
+        p
+          em Status: #{status}
+      .row
+        .six.columns
+          a.button.u-full-width(href='/admin/addSummoners') Add summoners from current LeagueId
+        .six.columns
+          a.button.u-full-width(href='/admin/updateRateLimits') Update rate limits
+      .row
+        .six.columns
+          a.button.u-full-width(href='/admin/addLeagueIds') Add LeagueIds from featured games
+        .six.columns
+          a.button.u-full-width(href='/admin/updateStaticData') Update static data
+      .row
+        form(action='/admin/addMatches' method='POST')
+          .row
+            .two.columns
+              input.u-full-width(type='text' placeholder='Number' name='numberOfSummoners' required='')
+            .four.columns
+              button.u-full-width(type='submit') Add matches of summoners
+      .row
+        form(action='/admin/analyzeMatches' method='POST')
+          .row
+            .two.columns
+              input.u-full-width(type='text' placeholder='Number' name='numberOfMatches' required='')
+            .four.columns
+              button.u-full-width(type='submit') Analyze matches
+      .row
+        h4 DB Actions
+      .row
+        form(action='/admin/addLeagueId' method='POST')
+          .row
+            .two.columns
+              select.u-full-width(name='tier' required='')
+                option(value='bronze') bronze
+                option(value='silver') silver
+                option(value='gold') gold
+                option(value='platinum') platinum
+                option(value='diamond') diamond
+            .four.columns
+              input.u-full-width(type='text' placeholder='LeagueId' name='leagueId' required='')
+            .three.columns
+              button(type='submit') Add LeagueId manually
+      .row
+        h4 Main Loop
+      .row
+        .four.columns
+          a.button.u-full-width(href='/admin/startStandardLoop') Start StandardLoop
+        .four.columns
+          a.button.u-full-width(href='/admin/startMainLoop') Start
+        .four.columns
+          a.button.u-full-width(href='/admin/stopMainLoop') Stop
