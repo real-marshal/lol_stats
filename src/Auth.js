@@ -2,7 +2,7 @@ const crypto = require('crypto')
 
 // Hashed credentials using SHA-256 written in hex format
 const user = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'
-const password = 'ef5cf4903c7a7cb68dfcc75ae69766d96ebd9d6e1027cdc527e49302bb6da763'
+const password = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'
 
 const authMiddleware = (req, res, next) => {
 
