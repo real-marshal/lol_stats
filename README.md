@@ -2,6 +2,8 @@
 
 1-year coursework at university, app that collects &amp; analyzes League of Legends matches statistics
 
+*Written in May - June 2018 to practice JS skills*
+
 ## Get started
 
 1. Restore DB scheme
